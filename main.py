@@ -1,16 +1,14 @@
-# This is a sample Python script.
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+print ("Здравствуйте, вы проходите анкету")
 
+name = input ("Введите ваше имя: ")
+username = input ("Введите вашу фамилию: ")
+age = input ("Введите ваш год рождения: ")
+year_of_birth = input("Нравится ли вам курс?: ")
+purpose_lesson = input ("Что вы ожидаете в дальнейших занятиях?: ")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print ("Вы заполнили такие данные: ")
+print ("Вас зовут", name, username)
+print ("Вам", int(age) - 2023, "лет")
+print ("Ваш ответ к первому вопросу: ", year_of_birth)
+print ("Ваш ответ к второму вопросу: ", purpose_lesson)
