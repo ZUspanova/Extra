@@ -1,0 +1,83 @@
+class Car:
+    """Общая информация об автомобиле"""
+    def __init__(self, model, class_auto, weight):
+        self.model = model
+        self.class_auto = class_auto
+        self.weight = weight
+        self.driver = None
+        self.engine = None
+        print(f"Марка: {self.model}, Класс: {self.class_auto}, Вес: {self.weight}")
+
+    def __str__(self):
+        return self.model
+
+    def start(self):
+        print("Поехали")
+
+    def stop(self):
+        print("Останавливаемся")
+
+    def turnRight(self):
+        print("Поворот направо")
+
+    def turnLeft(self):
+        print("Поворот налево")
+
+class Lorry(Car):
+    def __init__(self, model, class_auto, weight, driver, engine, carrying):
+        """Характеристика грузоподъемности кузова грузовика """
+        super().__init__(model, class_auto, weight)
+        self.carrying = carrying
+        self.driver = driver
+        self.engine = engine
+
+    def full_name_lorry(self):
+        """Полная инфа по грузовику"""
+        print(f"Информация о грузовике: Марка {self.model}, Вес: {self.weight}, {self.class_auto}, {self.driver}, {self.engine}")
+
+class SportCar(Car):
+    def __init__(self, model, class_auto, weight, driver, engine, speed):
+        """Предельная скорость спорткара """
+        super().__init__(model, class_auto, weight)
+        self.speed = speed
+        self.driver = driver
+        self.engine = engine
+        print(f"Информация о спорткаре: Марка {self.model}, Класс {self.class_auto}")
+
+class Engine:
+    """Общая информация о мощноси=ти и производители"""
+    def __init__(self, power, company):
+        self.power = power
+        self.company = company
+        print(f"{self.power} {self.company}")
+
+    def __str__(self):
+        return self.company
+
+class Person():
+
+    """Общая информация о водители"""
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+        return self.name
+
+
+class Driver(Person):
+    def __init__(self, name, experience, age):
+        """Расширение класса Драйвер"""
+        super().__init__(name, age)
+        self.experience = experience
+        print(f"Водитель: {self.name} ,Стаж вождения: {self.experience}  Возвраст: {self.age}")
+
+
+
+driver = Driver('Zarina', '5', '28')
+toyota = Car('Camry', 'Седан', '1500')
+
+my_car = Lorry('Volvo', 'Грузовик', '6000', 'Petr', '10', '8000')
+my_car.full_name_lorry()
+
+my_supercar = SportCar('1','2','3','4','5','6')
